@@ -18,7 +18,7 @@ def arp_check2(packet):
             key = tuple(sorted([packet[0][1].hwsrc, packet[ARP].hwsrc]))  #key - диалог hwsrc - mac адрес который нам отправлен
             packet_counts.update([key])  
             if sum(packet_counts.values()) > 3: logging.info("ARP Spoofing Detected");
-            #Обнуление таймера. Если текущее время отличается на 2 секунды (в задании - N)
+            #Обнуление таймера. Если текущее время отличаетсяS на 2 секунды (в задании - N)
             if time.time() - timing > 2: 
                 timing = time.time()
                 key = 0
